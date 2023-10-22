@@ -257,9 +257,11 @@ section c*/
 
 .section-c{
     display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    overflow-x: auto;
     margin-top: 10px;
+    overscroll-behavior-inline: contain;
+    overflow-y: hidden;
+    
 
 
 }
@@ -268,8 +270,11 @@ section c*/
     align-items: center;
     justify-content: center;
     margin: 0px 3px;
-    height: 100%;
+    
 }
+.scroll-bar::-webkit-scrollbar {
+    width: 0;
+    }
 
 
 .container-hc{
@@ -313,6 +318,7 @@ padding-left: 10px;
  @media screen and (max-width: 655px) {
    header .h-mobile{
     display: inline-block;
+    z-index: 6;
    }
    header .h-desktop{
     display: none;
@@ -320,6 +326,9 @@ padding-left: 10px;
    }
    header .d-a{
     display: none;
+   }
+   header{
+    height: 225px;
    }
     
  }
